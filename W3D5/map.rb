@@ -4,7 +4,7 @@ class Map
     end
 
     def set(key, value)
-        @ivar.each { |kv| raise "key already exists in Map" if kv[0] == key }
+        @ivar.each_with_index { |kv, idx| @ivar[idx] = [key, value] if kv[0] == key }
         @ivar << [key, value]
     end
 
@@ -30,7 +30,8 @@ end
 # abc = Map.new
 # (0..10).each { |num| abc.set(num, num + 1) }
 # abc.show
-# # abc.set(0, "foo") #should raise error
+# abc.set(0, "foo")
+# abc.show
 # abc.set(11, "foo")
 # abc.show
 # abc.delete(0)
