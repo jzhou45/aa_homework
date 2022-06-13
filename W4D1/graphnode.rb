@@ -18,12 +18,12 @@ def bfs(starting_node, target_value)
     arr = []
     queue = [starting_node]
     until queue.empty?
-        debugger
+        # debugger
         node = queue.first
-        if !arr.include?(node)
+        if !arr.include?(node.value)
             return node if target_value ==  node.value
-            node.neighbors.each { |neighbor| queue << neighbor }
-            arr << node
+            node.neighbors.each { |neighbor| queue << neighbor if !arr.include?(neighbor.value) }
+            arr << node.value
             queue.shift
         end
     end
