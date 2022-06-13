@@ -14,9 +14,15 @@ class Queue
     def peek
         @ivar[0]
     end
+
+    def show
+        p @ivar
+    end
 end
 
-# abc = Queue.new
+abc = Queue.new
+p abc.show << 1
+p abc
 # (0..10).each { |el| abc.enqueue(el) }
 # p abc
 # abc.dequeue
