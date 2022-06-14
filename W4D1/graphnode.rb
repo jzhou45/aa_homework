@@ -43,5 +43,5 @@ c.neighbors = [b, d]
 e.neighbors = [a]
 f.neighbors = [e]
 
-# p bfs(a, "b")
+p bfs(a, "b")
 p bfs(a, "f")
