@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Simon
   COLORS = %w(red blue green yellow)
 
@@ -28,7 +30,14 @@ class Simon
 
   def show_sequence
     add_random_color
-    seq.each { |color| puts color }
+    seq.each do |color|
+      puts color.red if color == "red"
+      puts color.blue if color == "blue"
+      puts color.green if color == "green"
+      puts color.yellow if color == "yellow"
+      sleep 1
+      system "clear"
+    end
   end
 
   def require_sequence
@@ -63,3 +72,6 @@ class Simon
     self.seq = []
   end
 end
+
+game = Simon.new
+game.play
