@@ -50,3 +50,22 @@ def clever_octopus(arr) # time = O(n) space = O(1)
 end
 
 # p clever_octopus(arr)
+
+tiles_array = ["up", "right-up", "right", "right-down", "down", "left-down", "left",  "left-up" ]
+
+def slow_dance(direction, tiles_array) #time = O(n) space = O(1)
+    tiles_array.each_with_index { |tile, idx| return idx if direction == tile}
+end
+
+# p slow_dance("up", tiles_array) #0
+# p slow_dance("right-down", tiles_array) #3
+
+tiles_hash = Hash.new(0)
+tiles_array.each_with_index { |tile, idx| tiles_hash[tile] = idx }
+
+def constant_dance(direction, tiles_hash) #time = O(1) space = O(1)
+    tiles_hash[direction]
+end
+
+# p constant_dance("up", tiles_hash)
+# p constant_dance("right-down", tiles_hash)
