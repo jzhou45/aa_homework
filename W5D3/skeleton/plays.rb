@@ -134,7 +134,7 @@ end
 # c = Play.new("title" => "Romeo & Juilet", "year" => 1800, "playwright_id" => 3)
 # c.create
 # p Play.all
-# p a.get_plays
+# p a.get_placd ys
 
 # @id = options['id']
 # @title = options['title']
